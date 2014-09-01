@@ -1,0 +1,17 @@
+<section class="h-card">
+	<h1><a href="/authors/<%= @author.uri_name %>" class="p-name u-url"><%= @author.name %></a></h1>
+
+	<div class="p-note">
+		<%= @author.bio %>
+	</div>
+
+	<% if @stories %>
+		<h2>Stories</h2>
+
+		<ol>
+			<% @stories.each do |story| %>
+				<li><a href="/stories/<%= story.orig_id %>"><%= story.title %></a></li>
+			<% end %>
+		</ol>
+	<% end %>
+</section>

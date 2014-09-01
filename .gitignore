@@ -1,0 +1,5 @@
+.bundle
+.DS_Store
+.rbenv-version
+.ruby-version
+config/database.yml

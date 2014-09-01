@@ -1,0 +1,7 @@
+<h1>Stories</h1>
+
+<ol>
+	<% @stories.each do |story| %>
+		<li><a href="/stories/<%= story.id %>"><%= story.title %></a></li>
+	<% end %>
+</ol>
