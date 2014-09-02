@@ -1,6 +1,10 @@
-<h1>Authors</h1>
+<header class="content-header">
+	<h1>Authors</h1>
 
-<ol>
+	<p><%= page_entries_info @authors, model: 'authors' %>.</p>
+</header>
+
+<ol class="authors-list">
 	<% @authors.each do |author| %>
 		<li><%= link_to author.name, author_path(author.uri_name), class: 'h-card' %></li>
 	<% end %>

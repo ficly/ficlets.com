@@ -1,0 +1,34 @@
+.authors-list {
+	@extend %ui-list;
+
+	@include breakpoint($bp--authors-list--medium) {
+		@include column-count(2);
+		@include column-gap(0.5em);
+	}
+
+	@include breakpoint($bp--authors-list--wide) {
+		@include column-count(3);
+	}
+
+	li + li {
+		margin-top: 0.5em;
+	}
+
+	a {
+		background: $grey--dark;
+		border-radius: 3px;
+		color: $yellow;
+		display: block;
+		font-weight: bold;
+		overflow: hidden;
+		padding: 0.5em 0.75em;
+		white-space: nowrap;
+		text-decoration: none;
+		text-overflow: ellipsis;
+
+		&:focus,
+		&:hover {
+			text-decoration: line-through;
+		}
+	}
+}

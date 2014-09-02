@@ -1,0 +1,12 @@
+.content-header {
+	margin-bottom: 1.5em;
+
+	h1 {
+		margin: 0;
+	}
+
+	p {
+		@include font-size(x-small);
+		margin: 0.5em 0 0 0;
+	}
+}

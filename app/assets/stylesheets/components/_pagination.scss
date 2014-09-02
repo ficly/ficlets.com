@@ -22,6 +22,11 @@
 	a {
 		border: 1px solid $grey--x-light;
 		text-decoration: none;
+
+		&:focus,
+		&:hover {
+			border-color: $grey--light;
+		}
 	}
 
 	.current {

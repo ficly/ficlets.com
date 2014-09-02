@@ -38,6 +38,7 @@ a {
 	background: none;
 	color: $blue;
 	text-decoration: underline;
+	transition: all 150ms linear;
 
 	&:focus,
 	&:hover {
