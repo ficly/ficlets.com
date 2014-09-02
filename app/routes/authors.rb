@@ -1,9 +1,14 @@
 class FicletsApp < Sinatra::Base
   namespace '/authors' do
     get '' do
-      @authors = Author.order('name ASC')
+      page = params[:page] =~ /^\d+$/ ? params[:page] : 1
+      @authors = Author.order('name ASC').page(page)
 
-      erb :'authors/index'
+      if !@authors.empty?
+        erb :'authors/index'
+      else
+        404
+      end
     end
 
     get '/:uri_name' do

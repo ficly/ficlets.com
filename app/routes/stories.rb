@@ -1,9 +1,14 @@
 class FicletsApp < Sinatra::Base
   namespace '/stories' do
     get '' do
-      @stories = Story.order('orig_id ASC')
+      page = params[:page] =~ /^\d+$/ ? params[:page] : 1
+      @stories = Story.order('orig_id ASC').page(page)
 
-      erb :'stories/index'
+      if !@stories.empty?
+        erb :'stories/index'
+      else
+        404
+      end
     end
 
     get '/:id' do

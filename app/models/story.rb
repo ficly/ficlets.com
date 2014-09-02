@@ -1,6 +1,8 @@
 class Story < ActiveRecord::Base
   belongs_to :author
 
+  self.per_page = 100
+
   def prequels
     related_stories(prequel_ids)
   end

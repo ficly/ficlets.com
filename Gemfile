@@ -6,6 +6,7 @@ gem 'sinatra-contrib'
 gem 'mysql2'
 gem 'activerecord'
 gem 'sinatra-activerecord'
+gem 'will_paginate'
 
 group :development do
   gem 'rake'
