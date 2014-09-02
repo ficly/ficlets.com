@@ -8,8 +8,6 @@ class FicletsApp < Sinatra::Base
 
     get '/:id' do
       if @story = Story.where(orig_id: params[:id]).first
-        @tags = @story.cached_tags.split(', ')
-
         erb :'stories/show'
       else
         404

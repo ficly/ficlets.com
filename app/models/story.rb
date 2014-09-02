@@ -9,6 +9,10 @@ class Story < ActiveRecord::Base
     related_stories(sequel_ids)
   end
 
+  def tags
+    cached_tags.split(', ')
+  end
+
   private
 
   def related_stories(data = [])
