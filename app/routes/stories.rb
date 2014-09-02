@@ -9,8 +9,6 @@ class FicletsApp < Sinatra::Base
     get '/:id' do
       if @story = Story.where(orig_id: params[:id]).first
         @tags = @story.cached_tags.split(', ')
-        @prequels = @story.related_stories(@story.prequels)
-        @sequels = @story.related_stories(@story.sequels)
 
         erb :'stories/show'
       else

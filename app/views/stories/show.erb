@@ -11,8 +11,8 @@
 		<%= @story.body %>
 	</div>
 
-	<% if @story.photo_url || !@prequels.empty? || !@sequels.empty? %>
-		<aside>
+	<% if @story.photo_url || !@story.prequels.empty? || !@story.sequels.empty? %>
+		<aside role="complementary">
 			<% if @story.photo_url %>
 				<figure>
 					<a href="<%= @story.photo_link %>"><img src="<%= @story.photo_url %>" alt=""></a>
@@ -22,22 +22,22 @@
 				</figure>
 			<% end %>
 
-			<% unless @prequels.empty? %>
+			<% unless @story.prequels.empty? %>
 				<h1>Prequels</h1>
 
 				<ol>
-					<% @prequels.each do |prequel| %>
-						<li><a href="/stories/<%= prequel.orig_id %>"><%= prequel.title %></a></li>
+					<% @story.prequels.each do |prequel| %>
+						<li><a href="/stories/<%= prequel.orig_id %>" rel="prev"><%= prequel.title %></a></li>
 					<% end %>
 				</ol>
 			<% end %>
 
-			<% unless @sequels.empty? %>
+			<% unless @story.sequels.empty? %>
 				<h1>Sequels</h1>
 
 				<ol>
-					<% @sequels.each do |sequel| %>
-						<li><a href="/stories/<%= sequel.orig_id %>"><%= sequel.title %></a></li>
+					<% @story.sequels.each do |sequel| %>
+						<li><a href="/stories/<%= sequel.orig_id %>" rel="next"><%= sequel.title %></a></li>
 					<% end %>
 				</ol>
 			<% end %>
