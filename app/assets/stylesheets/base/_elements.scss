@@ -1,0 +1,75 @@
+@-ms-viewport{
+	width: device-width;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+html {
+	box-sizing: border-box;
+	color: $grey;
+	font-family: Helvetica, sans-serif;
+	line-height: 1.4;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+
+body {
+	margin: 0;
+	padding: 2em 0 4em 0;
+}
+
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+main,
+nav,
+section {
+	display: block;
+}
+
+a {
+	background: none;
+	color: $blue;
+	text-decoration: underline;
+
+	&:focus,
+	&:hover {
+		color: darken($blue, 10%);
+	}
+}
+
+b,
+strong {
+	font-weight: bold;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: $orange--dark;
+	font-family: Georgia, serif;
+	font-weight: normal;
+}
+
+h1 {
+	@include font-size(xx-large);
+	margin: 0.67em 0;
+}
+
+img {
+	border: 0;
+}
+
+figure {
+	margin: 1em 40px;
+}

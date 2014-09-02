@@ -1,0 +1,10 @@
+.global-footer {
+	border-top: 1px dotted $grey--x-light;
+	padding-top: 2em;
+
+	p {
+		color: $grey--light;
+		@include font-size(xx-small);
+		margin: 0;
+	}
+}

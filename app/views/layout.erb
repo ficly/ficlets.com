@@ -11,25 +11,27 @@
 </head>
 <body>
 
-	<header role="banner">
-		<h1><a href="/" rel="home">Ficlets</a></h1>
+	<div class="layout-wrapper">
+		<header class="global-header" role="banner">
+			<h1 class="logo"><a href="/" rel="home">Ficlets</a></h1>
 
-		<nav role="navigation">
-			<ul>
-				<li><a href="/" rel="home">Home</a></li>
-				<li><a href="/stories">Stories</a></li>
-				<li><a href="/authors">Authors</a></li>
-			</ul>
-		</nav>
-	</header>
+			<nav class="navigation" role="navigation">
+				<ul>
+					<li><a href="/" rel="home">Home</a></li>
+					<li><a href="/stories">Stories</a></li>
+					<li><a href="/authors">Authors</a></li>
+				</ul>
+			</nav>
+		</header>
 
-	<main role="main">
-		<%= yield %>
-	</main>
+		<main class="global-content" role="main">
+			<%= yield %>
+		</main>
 
-	<footer role="contentinfo">
-		<p>Some rights reserved. This site’s content is licensed under a <a href="http://creativecommons.org/licenses/by-sa/2.5/" rel="license">Creative Commons Attribution-Share Alike 2.5 license</a>.</p>
-	</footer>
+		<footer class="global-footer" role="contentinfo">
+			<p>Some rights reserved. This site’s content is licensed under a <a href="http://creativecommons.org/licenses/by-sa/2.5/" rel="license">Creative Commons Attribution-Share Alike 2.5 license</a>.</p>
+		</footer>
+	</div>
 
 </body>
 </html>

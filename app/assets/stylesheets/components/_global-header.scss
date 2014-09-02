@@ -1,0 +1,52 @@
+.global-header {
+	.logo {
+		margin: 0;
+
+		a {
+			color: $grey--dark;
+			display: inline-block;
+			margin: -0.125em;
+			padding: 0.125em;
+			text-decoration: none;
+
+			&:focus,
+			&:hover {
+				text-decoration: line-through;
+			}
+		}
+	}
+
+	.navigation {
+		background: $yellow;
+		margin-top: 1em;
+		padding: 1em;
+
+		ul {
+			@extend %clear;
+			@extend %ui-list;
+		}
+
+		li {
+			float: left;
+			font-family: Courier, monospace;
+			font-weight: bold;
+			text-transform: lowercase;
+
+			+ li {
+				margin-left: 1.5em;
+			}
+		}
+
+		a {
+			color: $grey--dark;
+			display: inline-block;
+			margin: -0.5em;
+			padding: 0.5em;
+
+			&:focus,
+			&:hover {
+				text-decoration: line-through
+			}
+		}
+	}
+}
