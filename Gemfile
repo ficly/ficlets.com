@@ -7,6 +7,7 @@ gem 'mysql2'
 gem 'activerecord'
 gem 'sinatra-activerecord'
 gem 'will_paginate'
+gem 'sinatra-asset-pipeline'
 
 group :development do
   gem 'rake'
