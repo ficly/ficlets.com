@@ -1,6 +1,6 @@
 <article class="h-entry">
 	<header>
-		<h1><a href="/stories/<%= @story.orig_id %>" class="u-url p-name"><%= @story.title %></a></h1>
+		<h1><%= link_to @story.title, story_path(@story.orig_id), class: 'u-url p-name' %></h1>
 
 		<% if @story.is_mature %>
 			<p><b>Warning:</b> This story contains mature themes and/or language.</p>
@@ -27,7 +27,7 @@
 
 				<ol>
 					<% @story.prequels.each do |prequel| %>
-						<li><a href="/stories/<%= prequel.orig_id %>" rel="prev"><%= prequel.title %></a></li>
+						<li><%= link_to prequel.title, story_path(prequel.orig_id), rel: 'prev' %></li>
 					<% end %>
 				</ol>
 			<% end %>
@@ -37,7 +37,7 @@
 
 				<ol>
 					<% @story.sequels.each do |sequel| %>
-						<li><a href="/stories/<%= sequel.orig_id %>" rel="next"><%= sequel.title %></a></li>
+						<li><%= link_to sequel.title, story_path(sequel.orig_id), rel: 'next' %></li>
 					<% end %>
 				</ol>
 			<% end %>
@@ -47,7 +47,7 @@
 	<footer>
 		<h1>About</h1>
 
-		<p>This story was written by <a href="/authors/<%= @story.author.uri_name %>" class="p-author h-card"><%= @story.author.name %></a> and originally published on <time class="dt-pubished" datetime="<%= @story.published_at.to_s(:iso8601) %>"><%= @story.published_at.to_s(:display) %></time>.</p>
+		<p>This story was written by <%= link_to @story.author.name, author_path(@story.author.uri_name), class: 'p-author h-card' %> and originally published on <time class="dt-pubished" datetime="<%= @story.published_at.to_s(:iso8601) %>"><%= @story.published_at.to_s(:display) %></time>.</p>
 
 		<% unless @story.tags.empty? %>
 			<h2>Tags</h2>

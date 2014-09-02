@@ -2,7 +2,7 @@
 
 <ol>
 	<% @stories.each do |story| %>
-		<li><a href="/stories/<%= story.id %>"><%= story.title %></a></li>
+		<li><%= link_to story.title, story_path(story.orig_id) %></li>
 	<% end %>
 </ol>
 
