@@ -5,11 +5,11 @@
 		<%= @author.bio %>
 	</div>
 
-	<% if @stories %>
+	<% unless @author.stories.empty? %>
 		<h2>Stories</h2>
 
 		<ol>
-			<% @stories.each do |story| %>
+			<% @author.stories.each do |story| %>
 				<li><a href="/stories/<%= story.orig_id %>"><%= story.title %></a></li>
 			<% end %>
 		</ol>

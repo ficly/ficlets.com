@@ -10,8 +10,6 @@ class FicletsApp < Sinatra::Base
       uri_name = params[:uri_name]
 
       if @author = Author.where(uri_name: uri_name).first
-        @stories = Story.where(author_short: uri_name)
-
         erb :'authors/show'
       else
         404
