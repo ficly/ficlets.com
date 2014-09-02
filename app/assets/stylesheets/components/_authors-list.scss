@@ -15,9 +15,9 @@
 	}
 
 	a {
-		background: $grey--dark;
+		background: $grey--xx-light;
 		border-radius: 3px;
-		color: $yellow;
+		color: $orange;
 		display: block;
 		font-weight: bold;
 		overflow: hidden;
@@ -28,7 +28,7 @@
 
 		&:focus,
 		&:hover {
-			text-decoration: line-through;
+			color: lighten($orange, 10%);
 		}
 	}
 }
