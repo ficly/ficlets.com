@@ -9,18 +9,20 @@
 		<% end %>
 	</header>
 
-	<div class="story-content e-content">
-		<%= @story.body %>
-	</div>
+	<div class="story-content-wrapper">
+		<% if @story.photo_url %>
+			<figure class="story-photo" role="complementary">
+				<a href="<%= @story.photo_link %>"><img src="<%= @story.photo_url %>" alt=""></a>
+				<figcaption>
+					<a href="<%= @story.photo_link %>"><%= @story.photo_title.gsub(/^View\s|\son Flickr$/, '') %></a> by <%= @story.photo_author %>
+				</figcaption>
+			</figure>
+		<% end %>
 
-	<% if @story.photo_url %>
-		<figure class="story-photo" role="complementary">
-			<a href="<%= @story.photo_link %>"><img src="<%= @story.photo_url %>" alt=""></a>
-			<figcaption>
-				<a href="<%= @story.photo_link %>"><%= @story.photo_title %></a> by <%= @story.photo_author %>
-			</figcaption>
-		</figure>
-	<% end %>
+		<div class="story-content e-content">
+			<%= @story.body %>
+		</div>
+	</div>
 
 	<% if !@story.prequels.empty? || !@story.sequels.empty? %>
 		<aside class="story-related" role="complementary">

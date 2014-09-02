@@ -8,18 +8,20 @@
 		margin-top: 3em;
 	}
 
-	@include breakpoint($bp--story) {
-		.prequels {
+	@include breakpoint($bp--story--medium) {
+		.prequels,
+		.sequels {
 			float: left;
-			padding-right: 1.5em;
 			width: 50%;
 		}
 
+		.prequels {
+			padding-right: 1.5em;
+		}
+
 		.prequels + .sequels {
-			float: right;
 			margin: 0;
 			padding-left: 1.5em;
-			width: 50%;
 		}
 	}
 
@@ -27,7 +29,7 @@
 		@include font-size(x-large);
 		margin: 0;
 
-		@include breakpoint($bp--story) {
+		@include breakpoint($bp--story--medium) {
 			@include font-size(xx-large);
 		}
 	}

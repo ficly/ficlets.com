@@ -1,7 +1,18 @@
 .story-photo {
 	background: #000;
-	margin: 0;
+	margin: 0 auto 3em auto;
+	max-width: 30em;
 	padding: 0.5em;
+
+	@include breakpoint($bp--story--medium) {
+		float: right;
+		margin: 0 0 3em 3em;
+	}
+
+	@include breakpoint($bp--story--wide) {
+		margin-right: -4em;
+		width: 20em;
+	}
 
 	> a {
 		border: 0.25em solid #fff;

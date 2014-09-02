@@ -3,7 +3,7 @@
 		@include font-size(xx-large);
 		margin: 0;
 
-		@include breakpoint($bp--story) {
+		@include breakpoint($bp--story--medium) {
 			@include font-size(xxx-large);
 		}
 
