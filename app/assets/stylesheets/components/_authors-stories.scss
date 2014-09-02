@@ -1,0 +1,15 @@
+.authors-stories {
+	h2 {
+		@include font-size(xx-large);
+
+		i {
+			@include font-size(large);
+			font-style: italic;
+		}
+	}
+
+	.stories-list {
+		@include column-count;
+		@include column-gap;
+	}
+}

@@ -1,0 +1,33 @@
+.story-footer {
+	margin-top: 3em;
+
+	p {
+		color: $grey--light;
+		@include font-size(small);
+	}
+
+	ul {
+		@extend %ui-list;
+	}
+
+	li {
+		display: inline-block;
+		margin-bottom: 0.5em;
+		white-space: nowrap;
+
+		+ li {
+			margin-left: 1em;
+		}
+
+		a {
+			display: inline-block;
+			margin: -0.5em;
+			padding: 0.5em;
+			white-space: nowrap;
+
+			&:before {
+				content: "#";
+			}
+		}
+	}
+}

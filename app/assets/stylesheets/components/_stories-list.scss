@@ -1,0 +1,46 @@
+.stories-list {
+	@extend %ui-list;
+
+	@include breakpoint($bp--stories-list) {
+		@include column-count(2);
+		@include column-gap(3em);
+	}
+
+	li {
+		border-bottom: 1px dotted $grey--x-light;
+		margin-bottom: 1.5em;
+		padding-bottom: 1.5em;
+		page-break-inside: avoid;
+
+		&:last-child {
+			border: 0;
+			margin: 0;
+			padding: 0;
+		}
+	}
+
+	.title {
+		font-family: Helvetica, sans-serif;
+		@include font-size(x-large);
+		font-weight: bold;
+		line-height: 1.2;
+		margin: 0;
+
+		a {
+			color: $orange;
+			margin: -0.25em;
+			padding: 0.25em;
+
+			&:focus,
+			&:hover {
+				color: lighten($orange, 10%);
+			}
+		}
+	}
+
+	.meta {
+		color: $grey--light;
+		@include font-size(x-small);
+		margin: 0.5em 0 0 0;
+	}
+}

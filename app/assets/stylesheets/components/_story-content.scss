@@ -1,0 +1,11 @@
+.story-content {
+	margin: 1.5em 0 3em 0;
+
+	p {
+		line-height: 1.6;
+
+		@include breakpoint($bp--story) {
+			@include font-size(large);
+		}
+	}
+}

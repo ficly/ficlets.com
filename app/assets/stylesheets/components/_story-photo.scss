@@ -1,0 +1,33 @@
+.story-photo {
+	background: #000;
+	margin: 0;
+	padding: 0.5em;
+
+	> a {
+		border: 0.25em solid #fff;
+		display: block;
+		margin-bottom: 0.5em;
+
+		img {
+			display: block;
+			max-width: 100%;
+			width: 100%;
+		}
+	}
+
+	figcaption {
+		background: $grey--dark;
+		color: $grey--light;
+		@include font-size(x-small);
+		padding: 0.6em 0.5em 0.5em 0.5em;
+
+		a {
+			color: $yellow;
+
+			&:focus,
+			&:hover {
+				color: darken($yellow, 10%);
+			}
+		}
+	}
+}

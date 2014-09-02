@@ -1,0 +1,15 @@
+.story-header {
+	h1 {
+		@include font-size(xx-large);
+		margin: 0;
+
+		@include breakpoint($bp--story) {
+			@include font-size(xxx-large);
+		}
+
+		a {
+			color: $grey--dark;
+			text-decoration: none;
+		}
+	}
+}

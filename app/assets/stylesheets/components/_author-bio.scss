@@ -1,0 +1,18 @@
+.author-bio {
+	margin-bottom: 3em;
+
+	h1 {
+		@include font-size(xx-large);
+		margin: 0;
+
+		a {
+			color: $grey--dark;
+			text-decoration: none;
+		}
+	}
+
+	p {
+		@include font-size(small);
+		margin: 1.5em 0 0 0;
+	}
+}

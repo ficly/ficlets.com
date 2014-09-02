@@ -1,61 +1,70 @@
-<article class="h-entry">
-	<header>
+<article class="story h-entry">
+	<header class="story-header">
 		<h1><%= link_to @story.title, story_path(@story.orig_id), class: 'u-url p-name' %></h1>
 
 		<% if @story.is_mature %>
-			<p><b>Warning:</b> This story contains mature themes and/or language.</p>
+			<div class="warning">
+				<p><b>Warning:</b> This story contains mature themes and/or language.</p>
+			</div>
 		<% end %>
 	</header>
 
-	<div class="e-content">
+	<div class="story-content e-content">
 		<%= @story.body %>
 	</div>
 
-	<% if @story.photo_url || !@story.prequels.empty? || !@story.sequels.empty? %>
-		<aside role="complementary">
-			<% if @story.photo_url %>
-				<figure>
-					<a href="<%= @story.photo_link %>"><img src="<%= @story.photo_url %>" alt=""></a>
-					<figcaption>
-						“<a href="<%= @story.photo_link %>"><%= @story.photo_title %></a>” by <%= @story.photo_author %>
-					</figcaption>
-				</figure>
-			<% end %>
+	<% if @story.photo_url %>
+		<figure class="story-photo" role="complementary">
+			<a href="<%= @story.photo_link %>"><img src="<%= @story.photo_url %>" alt=""></a>
+			<figcaption>
+				<a href="<%= @story.photo_link %>"><%= @story.photo_title %></a> by <%= @story.photo_author %>
+			</figcaption>
+		</figure>
+	<% end %>
 
+	<% if !@story.prequels.empty? || !@story.sequels.empty? %>
+		<aside class="story-related" role="complementary">
 			<% unless @story.prequels.empty? %>
-				<h1>Prequels</h1>
+				<div class="prequels">
+					<h1>Prequels</h1>
 
-				<ol>
-					<% @story.prequels.each do |prequel| %>
-						<li><%= link_to prequel.title, story_path(prequel.orig_id), rel: 'prev' %></li>
-					<% end %>
-				</ol>
+					<ol class="stories-list">
+						<% @story.prequels.each do |prequel| %>
+							<li class="h-entry">
+								<h2 class="title"><%= link_to prequel.title, story_path(prequel.orig_id), class: 'p-name u-url' %></h2>
+
+								<p class="meta">Written by <%= link_to prequel.author.name, author_path(prequel.author.uri_name), class: 'p-author h-card' %>.</p>
+							</li>
+						<% end %>
+					</ol>
+				</div>
 			<% end %>
 
 			<% unless @story.sequels.empty? %>
-				<h1>Sequels</h1>
+				<div class="sequels">
+					<h1>Sequels</h1>
 
-				<ol>
-					<% @story.sequels.each do |sequel| %>
-						<li><%= link_to sequel.title, story_path(sequel.orig_id), rel: 'next' %></li>
-					<% end %>
-				</ol>
+					<ol class="stories-list">
+						<% @story.sequels.each do |sequel| %>
+							<li class="h-entry">
+								<h2 class="title"><%= link_to sequel.title, story_path(sequel.orig_id), class: 'p-name u-url' %></h2>
+
+								<p class="meta">Written by <%= link_to sequel.author.name, author_path(sequel.author.uri_name), class: 'p-author h-card' %>.</p>
+							</li>
+						<% end %>
+					</ol>
+				</div>
 			<% end %>
 		</aside>
 	<% end %>
 
-	<footer>
-		<h1>About</h1>
-
+	<footer class="story-footer">
 		<p>This story was written by <%= link_to @story.author.name, author_path(@story.author.uri_name), class: 'p-author h-card' %> and originally published on <time class="dt-pubished" datetime="<%= @story.published_at.to_s(:iso8601) %>"><%= @story.published_at.to_s(:display) %></time>.</p>
 
 		<% unless @story.tags.empty? %>
-			<h2>Tags</h2>
-
 			<ul>
 				<% @story.tags.each do |tag| %>
-					<!-- <li><a href="/tags/<%= tag %>" class="p-category"><%= tag %></a></li> -->
-					<li><%= tag %></li>
+					<li><a href="/tags/<%= tag %>" class="p-category"><%= tag %></a></li>
 				<% end %>
 			</ul>
 		<% end %>
