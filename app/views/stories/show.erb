@@ -72,4 +72,29 @@
 			</ul>
 		<% end %>
 	</footer>
+
+	<% unless @story.comments.empty? %>
+		<aside class="story-comments" id="comments" role="complementary">
+			<h1>Comments <i>(<%= @story.comments.count %>)</i></h1>
+
+			<ol class="comments-list">
+				<% @story.comments.each do |comment| %>
+					<li>
+						<article class="comment p-comment h-cite" id="comment-<%= comment.orig_id %>">
+							<div class="comment-content e-content">
+								<%= comment.body %>
+							</div>
+
+							<footer class="comment-footer">
+								<p>
+									<%= link_to comment.author.name, author_path(comment.author.uri_name), class: 'p-author h-card' %> commented on
+									<%= link_to "<time class=\"pubdate dt-published\" datetime=\"#{comment.published_at.to_s(:iso8601)}\">#{comment.published_at.to_s(:display)}</time>", "#comment-#{comment.orig_id}", class: 'comment-permalink u-url' %>.
+								</p>
+							</footer>
+						</article>
+					</li>
+				<% end %>
+			</ol>
+		</aside>
+	<% end %>
 </article>

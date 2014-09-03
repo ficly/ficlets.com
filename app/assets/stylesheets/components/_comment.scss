@@ -1,0 +1,33 @@
+.comment-content {
+	> :first-child {
+		margin-top: 0;
+	}
+
+	> :last-child {
+		margin-bottom: 0;
+	}
+
+	p {
+		line-height: 1.6;
+		margin: 1.5em 0;
+	}
+}
+
+.comment-footer {
+	margin-top: 0.5em;
+
+	p {
+		color: $grey--light;
+		@include font-size(x-small);
+		margin: 0;
+	}
+}
+
+.comment-permalink {
+	color: $grey;
+
+	&:focus,
+	&:hover {
+		color: darken($grey, 10%);
+	}
+}

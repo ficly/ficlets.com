@@ -1,0 +1,21 @@
+.story-comments {
+	margin-top: 3em;
+
+	h1 {
+		@include font-size(x-large);
+		margin: 0;
+
+		@include breakpoint($bp--story--medium) {
+			@include font-size(xx-large);
+		}
+
+		i {
+			@include font-size;
+			font-style: italic;
+
+			@include breakpoint($bp--story--medium) {
+				@include font-size(large);
+			}
+		}
+	}
+}

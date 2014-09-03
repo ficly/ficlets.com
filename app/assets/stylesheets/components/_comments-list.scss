@@ -1,0 +1,8 @@
+.comments-list {
+	@extend %ui-list;
+	margin-top: 1em;
+
+	li + li {
+		margin-top: 3em;
+	}
+}

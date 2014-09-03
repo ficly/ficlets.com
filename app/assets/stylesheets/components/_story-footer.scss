@@ -4,6 +4,7 @@
 	p {
 		color: $grey--light;
 		@include font-size(small);
+		margin: 0;
 	}
 
 	ul {
