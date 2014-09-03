@@ -7,9 +7,4 @@
 			font-style: italic;
 		}
 	}
-
-	.stories-list {
-		@include column-count;
-		@include column-gap;
-	}
 }

@@ -1,11 +1,6 @@
 .stories-list {
 	@extend %ui-list;
 
-	@include breakpoint($bp--stories-list) {
-		@include column-count(2);
-		@include column-gap(3em);
-	}
-
 	li {
 		border-bottom: 1px dotted $grey--x-light;
 		margin-bottom: 1.5em;
@@ -21,10 +16,14 @@
 
 	.title {
 		font-family: Helvetica, sans-serif;
-		@include font-size(x-large);
+		@include font-size;
 		font-weight: bold;
 		line-height: 1.2;
 		margin: 0;
+
+		@include breakpoint($bp--stories-list) {
+			@include font-size(x-large);
+		}
 
 		a {
 			color: $orange;

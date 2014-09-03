@@ -35,8 +35,6 @@
 	}
 
 	.stories-list {
-		@include column-count;
-		@include column-gap;
 		margin-top: 1em;
 
 		li {
