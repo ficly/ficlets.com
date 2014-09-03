@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140902152838) do
+ActiveRecord::Schema.define(version: 20140903134402) do
 
   create_table "authors", force: true do |t|
     t.string   "name"
@@ -22,6 +22,16 @@ ActiveRecord::Schema.define(version: 20140902152838) do
   end
 
   add_index "authors", ["uri_name"], name: "index_authors_on_uri_name", using: :btree
+
+  create_table "comments", force: true do |t|
+    t.integer  "orig_id"
+    t.integer  "story_id"
+    t.integer  "author_id"
+    t.text     "body"
+    t.datetime "published_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "stories", force: true do |t|
     t.integer  "orig_id"
