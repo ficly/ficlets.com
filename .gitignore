@@ -2,4 +2,5 @@
 .DS_Store
 .rbenv-version
 .ruby-version
+.sass-cache
 config/database.yml
