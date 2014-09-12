@@ -13,13 +13,13 @@
 
 	<div class="layout-wrapper">
 		<header class="global-header" role="banner">
-			<h1 class="logo"><a href="/" rel="home">Ficlets</a></h1>
+			<h1 class="logo"><%= link_to 'Ficlets', '/', rel: 'home' %></h1>
 
 			<nav class="navigation" role="navigation">
 				<ul>
-					<li><a href="/" rel="home">Home</a></li>
-					<li><a href="/stories">Stories</a></li>
-					<li><a href="/authors">Authors</a></li>
+					<li><%= link_to 'Home', '/', rel: 'home' %></li>
+					<li><%= link_to 'Stories', stories_path %></li>
+					<li><%= link_to 'Authors', authors_path %></li>
 				</ul>
 			</nav>
 		</header>
@@ -29,7 +29,7 @@
 		</main>
 
 		<footer class="global-footer" role="contentinfo">
-			<p>Some rights reserved. This site’s content is licensed under a <a href="http://creativecommons.org/licenses/by-sa/2.5/" rel="license">Creative Commons Attribution-Share Alike 2.5 license</a>. Source code available on <%= link_to 'GitHub', 'https://github.com/ficly/ficlets.com', rel: 'source' %>.</p>
+			<p>Some rights reserved. This site’s content is licensed under a <%= link_to 'Creative Commons Attribution-Share Alike 2.5 license', 'http://creativecommons.org/licenses/by-sa/2.5/', rel: 'license' %>. Source code available on <%= link_to 'GitHub', 'https://github.com/ficly/ficlets.com', rel: 'source' %>.</p>
 		</footer>
 	</div>
 
