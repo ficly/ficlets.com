@@ -1,6 +1,6 @@
 <article class="story h-entry">
 	<header class="story-header">
-		<h1><%= link_to @story.title, story_path(@story.orig_id), class: 'u-url p-name' %></h1>
+		<h1><%= link_to @story.title, story_path(@story.original_id), class: 'u-url p-name' %></h1>
 
 		<% if @story.is_mature %>
 			<div class="warning">
@@ -33,7 +33,7 @@
 					<ol class="stories-list">
 						<% @story.prequels.each do |prequel| %>
 							<li class="h-entry">
-								<h2 class="title"><%= link_to prequel.title, story_path(prequel.orig_id), class: 'p-name u-url' %></h2>
+								<h2 class="title"><%= link_to prequel.title, story_path(prequel.original_id), class: 'p-name u-url' %></h2>
 
 								<p class="meta">Written by <%= link_to prequel.author.name, author_path(prequel.author.uri_name), class: 'p-author h-card' %>.</p>
 							</li>
@@ -49,7 +49,7 @@
 					<ol class="stories-list">
 						<% @story.sequels.each do |sequel| %>
 							<li class="h-entry">
-								<h2 class="title"><%= link_to sequel.title, story_path(sequel.orig_id), class: 'p-name u-url' %></h2>
+								<h2 class="title"><%= link_to sequel.title, story_path(sequel.original_id), class: 'p-name u-url' %></h2>
 
 								<p class="meta">Written by <%= link_to sequel.author.name, author_path(sequel.author.uri_name), class: 'p-author h-card' %>.</p>
 							</li>
@@ -80,7 +80,7 @@
 			<ol class="comments-list">
 				<% @story.comments.each do |comment| %>
 					<li>
-						<article class="comment p-comment h-cite" id="comment-<%= comment.orig_id %>">
+						<article class="comment p-comment h-cite" id="comment-<%= comment.original_id %>">
 							<div class="comment-content e-content">
 								<%= comment.body %>
 							</div>
@@ -88,7 +88,7 @@
 							<footer class="comment-footer">
 								<p>
 									<%= link_to comment.author.name, author_path(comment.author.uri_name), class: 'p-author h-card' %> commented on
-									<%= link_to "<time class=\"pubdate dt-published\" datetime=\"#{comment.published_at.to_s(:iso8601)}\">#{comment.published_at.to_s(:display)}</time>", "#comment-#{comment.orig_id}", class: 'comment-permalink u-url' %>.
+									<%= link_to "<time class=\"pubdate dt-published\" datetime=\"#{comment.published_at.to_s(:iso8601)}\">#{comment.published_at.to_s(:display)}</time>", "#comment-#{comment.original_id}", class: 'comment-permalink u-url' %>.
 								</p>
 							</footer>
 						</article>
