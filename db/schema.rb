@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140903160431) do
+ActiveRecord::Schema.define(version: 20140903134402) do
 
   create_table "authors", force: true do |t|
     t.string   "name"
@@ -21,38 +21,32 @@ ActiveRecord::Schema.define(version: 20140903160431) do
     t.datetime "updated_at"
   end
 
-  add_index "authors", ["uri_name"], name: "index_authors_on_uri_name", using: :btree
-
   create_table "comments", force: true do |t|
+    t.integer  "original_id"
     t.integer  "story_id"
     t.integer  "author_id"
-    t.integer  "orig_id"
     t.text     "body"
     t.datetime "published_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "comments", ["story_id"], name: "index_comments_on_story_id", using: :btree
-
   create_table "stories", force: true do |t|
-    t.integer  "orig_id"
+    t.integer  "original_id"
+    t.integer  "author_id"
     t.string   "title"
     t.text     "body"
+    t.boolean  "is_mature"
     t.text     "prequel_ids"
     t.text     "sequel_ids"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.text     "cached_tags"
     t.string   "photo_url"
     t.string   "photo_link"
     t.string   "photo_author"
     t.string   "photo_title"
     t.datetime "published_at"
-    t.text     "cached_tags"
-    t.boolean  "is_mature",    default: false
-    t.integer  "author_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
-
-  add_index "stories", ["orig_id"], name: "index_stories_on_orig_id", using: :btree
 
 end
