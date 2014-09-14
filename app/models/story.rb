@@ -23,7 +23,9 @@ class Story < ActiveRecord::Base
     story_ids = YAML.load(data)
 
     story_ids.each do |story_id|
-      stories << Story.where(original_id: story_id).first
+      if story = Story.where(original_id: story_id).first
+        stories << story
+      end
     end
 
     stories
