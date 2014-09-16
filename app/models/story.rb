@@ -1,6 +1,7 @@
 class Story < ActiveRecord::Base
   belongs_to :author
   has_many :comments, dependent: :destroy
+  # has_many :tags
 
   self.per_page = 100
 

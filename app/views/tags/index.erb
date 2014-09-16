@@ -1,0 +1,13 @@
+<header class="content-header">
+	<h1>Tags</h1>
+
+	<p><%= page_entries_info @tags, model: 'tags' %>.</p>
+</header>
+
+<ol class="tags-list">
+	<% @tags.each do |tag| %>
+		<li><%= link_to tag.name, tag_path(tag.uri_name) %></li>
+	<% end %>
+</ol>
+
+<%= will_paginate @tags, role: 'navigation' %>
