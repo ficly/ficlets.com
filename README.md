@@ -28,7 +28,7 @@ As we wound down its successor, [Ficly](http://ficly.com/), in September 2014, w
 
 Ficlets was always a labor of love for everyone involved. AOL provided us an opportunity to create something meaningful and we ran with it. The community that evolved around Ficlets (and Ficly) is one of the most amazing, engaged, creative groups of people we've ever encountered and we're eternally grateful for their support.
 
-- [Jason](https://github.com/jgarber623), September 16, 2014
+– [Jason](https://github.com/jgarber623), September 16, 2014
 
 
 ## License
