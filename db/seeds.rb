@@ -1,4 +1,4 @@
-config = YAML.load_file('config/database.yml')
+config = YAML.load_file('config/database.yml')["#{Sinatra::Application.environment}"]
 
 puts 'Emptying database...'
 Author.delete_all
