@@ -8,7 +8,6 @@ class CreateStories < ActiveRecord::Migration
       t.boolean  :is_mature
       t.text     :prequel_ids
       t.text     :sequel_ids
-      t.text     :cached_tags
       t.string   :photo_url
       t.string   :photo_link
       t.string   :photo_author
