@@ -1,13 +1,6 @@
-require 'active_support/all'
-require 'sinatra'
-require 'sinatra/activerecord'
 require 'sinatra/asset_pipeline'
-require 'sinatra/namespace'
-require 'sinatra/partial'
 require 'will_paginate'
 require 'will_paginate/active_record'
-
-Dir.glob('./config/initializers/*.rb', &method(:require))
 
 class FicletsApp < Sinatra::Base
   register Sinatra::Namespace
@@ -30,4 +23,5 @@ class FicletsApp < Sinatra::Base
   end
 end
 
+Dir.glob('./config/initializers/*.rb', &method(:require))
 Dir.glob('./app/**/*.rb', &method(:require))
