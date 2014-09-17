@@ -6,6 +6,8 @@ require 'will_paginate/active_record'
 Dir.glob('./config/initializers/*.rb', &method(:require))
 
 class FicletsApp < Sinatra::Base
+  I18n.enforce_available_locales = false
+
   register Sinatra::Namespace
   register Sinatra::Partial
   register WillPaginate::Sinatra
