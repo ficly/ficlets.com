@@ -3,6 +3,8 @@ class Story < ActiveRecord::Base
   has_and_belongs_to_many :tags
   has_many :comments, dependent: :destroy
 
+  before_destroy { tags.clear }
+
   self.per_page = 100
 
   def prequels
