@@ -1,7 +1,7 @@
 class Story < ActiveRecord::Base
   belongs_to :author
+  has_and_belongs_to_many :tags
   has_many :comments, dependent: :destroy
-  # has_many :tags
 
   self.per_page = 100
 
@@ -11,10 +11,6 @@ class Story < ActiveRecord::Base
 
   def sequels
     related_stories(sequel_ids)
-  end
-
-  def tags
-    cached_tags.split(', ')
   end
 
   private

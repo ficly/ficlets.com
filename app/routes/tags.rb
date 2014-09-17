@@ -14,10 +14,11 @@ class FicletsApp < Sinatra::Base
     end
 
     get '/:uri_name' do
-      uri_name = params[:uri_name]
+      page = params[:page] =~ /^\d+$/ ? params[:page].to_i : 1
 
-      if @tag = Tag.where(uri_name: uri_name).first
-        @page_title = @tag.name
+      if @tag = Tag.where(uri_name: params[:uri_name]).first
+        @page_title = "Stories tagged “#{@tag.name}”"
+        @stories = @tag.stories.paginate(page: page)
 
         erb :'tags/show'
       else
