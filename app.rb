@@ -1,5 +1,9 @@
 require 'active_support/all'
+require 'sinatra'
+require 'sinatra/activerecord'
 require 'sinatra/asset_pipeline'
+require 'sinatra/namespace'
+require 'sinatra/partial'
 require 'will_paginate'
 require 'will_paginate/active_record'
 
