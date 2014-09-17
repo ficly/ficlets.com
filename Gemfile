@@ -8,6 +8,7 @@ gem 'activerecord'
 gem 'sinatra-activerecord'
 gem 'will_paginate'
 gem 'sinatra-asset-pipeline'
+gem 'sinatra-partial'
 
 group :development do
   gem 'rake'

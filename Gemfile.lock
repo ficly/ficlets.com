@@ -68,6 +68,8 @@ GEM
       rack-test
       sinatra (~> 1.4.0)
       tilt (~> 1.3)
+    sinatra-partial (0.4.0)
+      sinatra
     sprockets (2.12.1)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -101,5 +103,6 @@ DEPENDENCIES
   sinatra-activerecord
   sinatra-asset-pipeline
   sinatra-contrib
+  sinatra-partial
   tux
   will_paginate
