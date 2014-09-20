@@ -4,3 +4,4 @@
 .ruby-version
 .sass-cache
 config/database.yml
+tmp/
