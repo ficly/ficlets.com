@@ -6,7 +6,7 @@ Story.delete_all
 Comment.delete_all
 Tag.delete_all
 
-['authors', 'stories', 'comments', 'tags'].each do |filename|
+['authors', 'stories', 'comments', 'tags', 'stories_tags'].each do |filename|
   puts "Importing #{filename}..."
   `mysql -u#{config['username']} -p#{config['password']} #{config['database']} < db/seeds/#{filename}.sql`
 end
